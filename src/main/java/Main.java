@@ -13,6 +13,16 @@ public class Main {
         coffee.prepare();
         tea.prepare();
 
+        Beverage drinkCoffee = new Coffee(1.5);
+        Beverage drinkTea = new Tea(1.99);
+
+        //Coffee drinkBeverage = new Beverage("Coffee", 2.8); //Compile time error!
+
         Beverage[] menu = {beverage, coffee, tea};
+        for (Beverage drink : menu){
+            System.out.println("Now preparing: " + drink.getName());
+            drink.prepare(); //Same method, different behavior!
+            System.out.println("Price: $" + drink.getPrice() + "\n");
+        }
     }
 }
